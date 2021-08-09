@@ -4,7 +4,11 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Réservez vos vacances</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+        <title>Réservez vos vacances de rêve !</title>
         <script
             src="https://kit.fontawesome.com/5b0be6a236.js"
             crossorigin="anonymous"
@@ -13,19 +17,21 @@
     <body>
         <header>
             <img src="photos/Reservia.svg" alt="logo Reservia" />
-            <nav class="header_nav">
-                <ul class="menu">
-                    <li>
-                        <a class="accommodation" href="#accommodation"
-                            >Hébergements</a
-                        >
-                    </li>
-                    <li>
-                        <a class="activities" href="#activities">Activités</a>
-                    </li>
-                </ul>
-            </nav>
-            <a class="register" href="register">S'inscrire</a>
+            <div class="menu-button">
+                <nav class="header-nav">
+                    <ul class="menu">
+                        <li>
+                            <a class="menu-accommodation" href="#accommodation"
+                                >Hébergements</a
+                            >
+                        </li>
+                        <li>
+                            <a class="menu-activities" href="#activities">Activités</a>
+                        </li>
+                    </ul>
+                </nav>            
+                <a class="register" href="register">S'inscrire</a>
+            </div>
         </header>
 
         <main>
@@ -34,8 +40,8 @@
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
                 <form class="search-city" method="GET" action="#.php">
-                    <label class="label_input" for="ville">
-                        <i class="fas fa-map-marker-alt" id="gps"></i>
+                    <label class="label-input" for="ville">
+                        <i class="fas fa-map-marker-alt gps"></i>
                     </label>
                     <input
                         class="text-city"
@@ -44,9 +50,9 @@
                         id="ville"
                         placeholder="Marseille, France"
                     />
-                    <button class="research" type="submit" value="Rechercher">
-                        <span class="research_text">Rechercher</span>
-                        <i class="fas fa-search research_icon"></i>
+                    <button class="research-button" type="submit" value="Rechercher">
+                        <span class="research-text">Rechercher</span>
+                        <i class="fas fa-search research-icon"></i>
                     </button>
                 </form>
                 <!----------boutons filtres---------->
@@ -57,25 +63,25 @@
                             <div class="button-icon">
                                 <i class="fas fa-money-bill-wave"></i>
                             </div>
-                            <span class="filter-text">économique</span>
+                            <span class="filter-text">Economique</span>
                         </div>
-                        <div class="button_filters">
-                            <div class="button_icon">
+                        <div class="button-filter">
+                            <div class="button-icon">
                                 <i class="fas fa-child"></i>
                             </div>
-                            <span class="filter_text">Familial</span>
+                            <span class="filter-text">Familial</span>
                         </div>
-                        <div class="button_filters">
-                            <div class="button_icon">
+                        <div class="button-filter">
+                            <div class="button-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
-                            <span class="filter_text">Romantique</span>
+                            <span class="filter-text">Romantique</span>
                         </div>
-                        <div class="button_filters">
-                            <div class="button_icon">
+                        <div class="button-filter">
+                            <div class="button-icon">
                                 <i class="fas fa-dog"></i>
                             </div>
-                            <span class="filter_text">Animaux autorisés</span>
+                            <span class="filter-text">Animaux autorisés</span>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,195 @@
+body {
+    margin: 0 auto;
+    font-family: Raleway, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 35px;
+}
+
+header a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  margin-right: 30px;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;  
+}
+
+.menu {
+  display: flex;    
+}
+
+.menu-accommodation {
+  color: #0065fc;
+}
+
+.menu-activities {
+  color: black;
+}
+
+.top-search {
+  padding: 20px;
+}
+
+.text-city, .research-button, .gps {
+  height: 40px;
+}
+
+.label-input {
+  position: relative;
+  border-radius: 1rem 0 0 1rem;
+  background-color: #f2f2f2;  
+}
+.gps {
+  border-radius: 1rem 0 0 1rem;
+  background-color: #f2f2f2;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.text-city {
+  font-weight: bold;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  padding-left: 2rem;   
+}
+
+.research-button {
+  background-color: #0065fc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+  padding: 0 1rem;
+}
+
+.research-icon {
+  display: none;
+}
+
+.filters-area {
+  display: flex;
+  align-items: center;
+}
+
+.filters {
+  display: flex;  
+}
+
+.button-filter {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  border: 2px solid #d9d9d9;
+  border-radius: 2rem; 
+  font-weight: bold;
+}
+
+.button-icon {
+  background-color: #deebff;
+  border-radius: 50%;  
+  color: #0065fc;
+  height: 2rem;
+  width: 2rem;  
+}
+
+.filter-text {
+  padding: 0 0.8rem;
+}
+
+.filters i {
+  
+  /* icones bleus à centrer */
+}
+
+.result {
+  display: flex;
+  align-items: center;  
+}
+
+.i-logo {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  color: #0065fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/*
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin: 0 35px;
+  }
+  
+  .header_nav {
+    margin-left: auto;
+  }
+  
+  /*bouton s'inscrire*/ /*
+  .register {
+    text-decoration: none;
+    color: #0065fc;
+    font-weight: bold;
+  }
+  nav li {
+    margin-right: 30px;
+  }
+  
+  ul li a:hover {
+    color: #0065fc;
+  }
+  
+  nav a:visited {
+    color: black;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0%;
+  }
+  
+  .menu li {
+    padding: 2rem;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    color: black;
+  }
+  
+  .menu li:hover {
+    border-top: 3px solid#0065FC;
+  }
+  
+  nav li .accommodation {
+    color: #0065fc;
+  }
+  
+  .menu .accommodation {
+    padding: 2rem;
+    border-top: 3px solid #0065fc;
+  }
+  */
