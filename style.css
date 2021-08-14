@@ -141,12 +141,118 @@ button span {
 
 /******** Hébergements ********/
 
-.acco-result {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 1fr 1fr;
+#accommodation {
+  width: 60%;
+  display: inline-grid;
+  /*grid-template-rows: minmax(100px, auto) 100px 100px 30px;
+  grid-template-columns: repeat(3, 30%);  */
+  grid-template: auto / repeat(3, 30%);
+  grid-template-areas:
+    "titreacco titreacco titreacco"
+    "cannebiere port mouettes"
+    "mer panier amina"
+    "afficherplus afficherplus afficherplus";
 }
 
+.acco-title {
+  grid-area: titreacco;
+}
+
+.cannebiere {
+  grid-area: cannebiere;
+}
+
+.port {
+  grid-area: port;
+}
+
+.mouettes {
+  grid-area: mouettes;
+}
+
+.mer {
+  grid-area: mer;
+}
+
+.panier {
+  grid-area: panier;
+}
+
+.amina {
+  grid-area: amina;
+}
+
+.displaymore {
+  grid-area: afficherplus;
+}
+
+/******** Populaires ********/
+#popular {
+  width: 30%;
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 200px 200px 200px;
+  grid-template-areas: 
+    "popular-title"
+    "soleil"
+    "eau"
+    "bleu";
+}
+
+.popular-title {
+  grid-area: popular-title;
+  display: flex;
+  justify-content: space-between;
+}
+
+.soleil {
+  grid-area: soleil;
+}
+
+.eau {
+  grid-area: eau;
+}
+
+.bleu {
+  grid-area: bleu;
+}
+
+/******** Activités ********/
+
+#activities {
+  display: grid;
+  grid-template-columns: repeat (4, 20%);
+  grid-template-rows: 30px 80px 30px 70px;
+  grid-template-areas: 
+    "activities-title activities-title activities-title activities-title"
+    "port pomegues calanques garde"
+    "port space calanques 1fr"
+    "port frioul calanques longchamp";
+}
+
+.activities-title {
+  grid-area: activities-title;
+}
+
+.port {
+  grid-area: port;
+}
+
+.pomegues {
+  grid-area: pomegues;
+}
+
+.calanques {
+  grid-area: calanques;
+}
+
+.frioul {
+  grid-area: frioul;
+}
+
+.longchamp {
+  grid-area: longchamp;
+}
 
 /*
 header {
