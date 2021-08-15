@@ -142,19 +142,35 @@ button span {
 /******** Hébergements ********/
 
 #accommodation {
-  width: 65%;  
+  width: 65vw;  
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
+  gap: 30px ;
   background-color: #f2f2f2;
   display: inline-grid;
   /*grid-template-rows: minmax(100px, auto) 100px 100px 30px;
   grid-template-columns: repeat(3, 30%);  */
-  grid-template-columns: repeat(3, 30%);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 210px 210px auto;
   grid-template-areas:
     "titreacco titreacco titreacco"
     "cannebiere port mouettes"
     "mer panier amina"
     "afficherplus afficherplus afficherplus";
+}
+
+#accommodation figure {
+  height: 100%;
+}
+
+#accommodation img {
+  border-radius: 20px 20px 0 0;
+  height: 60%;
+  object-fit: cover;
+}
+
+#accommodation figcaption {
+  padding: 6px 14px;
 }
 
 .acco-title {
@@ -191,12 +207,15 @@ button span {
 
 /******** Populaires ********/
 #popular {
-  width: 25%;
+  width: 26vw;
   border-radius: 20px;
-  background-color: #f2f2f2;  
+  background-color: #f2f2f2;
+  padding: 30px;
+  gap: 30px ;
+  margin-left: 2vw;  
   display: inline-grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 200px 200px 200px;
+  grid-template-rows: auto 150px 150px 150px;
   grid-template-areas: 
     "popular-title"
     "soleil"
@@ -204,10 +223,37 @@ button span {
     "bleu";
 }
 
-.popular-title {
-  grid-area: popular-title;
+.fa-chart-line {
+  font-size: 1.5em;  
+}
+
+#popular figure {
+  height: 100%;
+}
+
+#popular img {
+  height: 100%;
+  width: 40%;
+  border-radius: 20px 0 0 20px;
+  object-fit: cover;
+}
+
+#popular figcaption {
+  padding: 8px 16px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.popular-title {
+  grid-area: popular-title; 
+  display: flex;  
+  justify-content: space-between; 
+}
+
+.popular-photo {
+  display: flex;
+  flex-direction: row;
 }
 
 .soleil {
@@ -235,45 +281,74 @@ button span {
   transform: scale(1.01);
 }
 
+#accommodation h3, #popular h3 {
+  font-weight: bolder;  
+}
+
+#accommodation p, #popular p {
+  font-size: 0.9rem;
+}
+
 .fa-star {
   color: #0065fc;
+  font-size: 0.8rem;
+  letter-spacing: -0.1rem;
 }
 
 .grey-star {
-  color: #f2f2f2;
-  padding-left: 0.3rem;
+  color: #f2f2f2;  
 }
 
 /******** Activités ********/
 
 #activities {
-  display: grid;
-  grid-template-columns: repeat (4, 20%);
-  
+  display: grid;  
+  grid-template-columns: repeat (4, 1fr);
+  grid-template-rows: auto 250px 250px;
   grid-template-areas: 
     "activities-title activities-title activities-title activities-title"
-    "port pomegues calanques garde"    
-    "port frioul calanques longchamp";
+    "vieuxport pomegues calanques garde"    
+    "vieuxport frioul calanques longchamp";
+}
+
+#activities figcaption {
+  height: 60px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+#activities figure {
+  height: 100%;
+}
+
+#activities img {  
+  border-radius: 20px 20px 0 0;  
+  height: calc (100% - 60px);
+  object-fit: cover;
 }
 
 .activities-title {
   grid-area: activities-title;
 }
 
-.port {
-  grid-area: port;
+.vieuxport {
+  grid-area: vieuxport;
 }
 
 .pomegues {
   grid-area: pomegues;
 }
 
+.frioul {
+  grid-area: frioul;
+}
+
 .calanques {
   grid-area: calanques;
 }
 
-.frioul {
-  grid-area: frioul;
+.garde {
+  grid-area: garde;
 }
 
 .longchamp {
@@ -288,61 +363,29 @@ button span {
   box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);
 }
 
-/*
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    position: relative;
-    margin: 0 35px;
-  }
-  
-  .header_nav {
-    margin-left: auto;
-  }
-  
-  /*bouton s'inscrire*/ /*
-  .register {
-    text-decoration: none;
-    color: #0065fc;
-    font-weight: bold;
-  }
-  nav li {
-    margin-right: 30px;
-  }
-  
-  ul li a:hover {
-    color: #0065fc;
-  }
-  
-  nav a:visited {
-    color: black;
-  }
-  
-  .menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0%;
-  }
-  
-  .menu li {
-    padding: 2rem;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    color: black;
-  }
-  
-  .menu li:hover {
-    border-top: 3px solid#0065FC;
-  }
-  
-  nav li .accommodation {
-    color: #0065fc;
-  }
-  
-  .menu .accommodation {
-    padding: 2rem;
-    border-top: 3px solid #0065fc;
-  }
-  */
+/******* footer *******/
+
+footer {
+  display: flex;
+  background-color: #f2f2f2;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 35px;
+  padding-right: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.title_links {
+  font-weight: bold;
+}
