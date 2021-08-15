@@ -142,11 +142,14 @@ button span {
 /******** Hébergements ********/
 
 #accommodation {
-  width: 60%;
+  width: 65%;  
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
   display: inline-grid;
   /*grid-template-rows: minmax(100px, auto) 100px 100px 30px;
   grid-template-columns: repeat(3, 30%);  */
-  grid-template: auto / repeat(3, 30%);
+  grid-template-columns: repeat(3, 30%);
   grid-template-areas:
     "titreacco titreacco titreacco"
     "cannebiere port mouettes"
@@ -188,7 +191,9 @@ button span {
 
 /******** Populaires ********/
 #popular {
-  width: 30%;
+  width: 25%;
+  border-radius: 20px;
+  background-color: #f2f2f2;  
   display: inline-grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30px 200px 200px 200px;
@@ -217,16 +222,37 @@ button span {
   grid-area: bleu;
 }
 
+/******** commun  ********/
+.acco-card, .popular-card {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 0.3rem;
+  box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);  
+}
+
+.acco-card:hover, .popular-card:hover, .activity-card:hover {
+  transform: scale(1.01);
+}
+
+.fa-star {
+  color: #0065fc;
+}
+
+.grey-star {
+  color: #f2f2f2;
+  padding-left: 0.3rem;
+}
+
 /******** Activités ********/
 
 #activities {
   display: grid;
   grid-template-columns: repeat (4, 20%);
-  grid-template-rows: 30px 80px 30px 70px;
+  
   grid-template-areas: 
     "activities-title activities-title activities-title activities-title"
-    "port pomegues calanques garde"
-    "port space calanques 1fr"
+    "port pomegues calanques garde"    
     "port frioul calanques longchamp";
 }
 
@@ -252,6 +278,14 @@ button span {
 
 .longchamp {
   grid-area: longchamp;
+}
+
+.activity-card {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 20px;  
+  box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);
 }
 
 /*
