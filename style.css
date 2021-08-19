@@ -1,8 +1,10 @@
 body {
-    margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
+    padding: 30px;
     font-family: Raleway, sans-serif;
     display: grid;
-    
+    gap: 30px;
     grid-template-columns: 65% 30%;
     grid-template-areas: 
       "header header"
@@ -38,8 +40,7 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
-  margin: 0 35px;
+  justify-content: space-between;  
 }
 
 header a {
@@ -90,16 +91,22 @@ ul li a:hover {
   font-weight: bold;
 }
 
+/***
 .top-search, .accommodation, .popular {
   margin: 0 35px;  
-}
+} ***/
 
+/***
 .activities {
   margin: 35px;
-}
+} ***/
 
 .nature {
   margin-bottom: 1rem;
+}
+
+.search-bar {
+  margin-bottom: 20px;
 }
 
 .text-city, .research-button, .gps {
@@ -107,21 +114,18 @@ ul li a:hover {
 }
 
 .label-input {
-  position: relative;
+  /*position: relative;*/
   border-radius: 1rem 0 0 1rem;
   background-color: #f2f2f2;  
   margin-left: 20px;
-   
-}
+ }
 
 .gps {
   border-radius: 1rem 0 0 1rem;
   background-color: #f2f2f2;  
   width: 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  line-height: 40px;
+  text-align: center;
 }
 
 .text-city {
@@ -151,21 +155,30 @@ ul li a:hover {
   display:inline-block;  
 }
 
-
-button {
+.filter-button {
   border: 2px solid #d9d9d9;
   background-color: white;
   border-radius: 2rem; 
   font-weight: bold;
-  height: 38px;  
+  height: 38px;
+  line-height: 38px;
+  margin: 0 10px 5px 0;  
 }
 
- .filter-button {
-  margin: 1.1rem;
-}
 .filter-button:hover {
   background-color: #0065fc;
-  color: white;  
+  color: white;
+  border: 2px solid #0065fc;  
+}
+
+.filter-button i {
+  color: #0065fc;
+  background-color: #deebff;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  line-height: 38px;
+  margin: -2px;
 }
 
 .search-result {
@@ -180,31 +193,11 @@ button {
   border-radius: 50%;  
   color: #0065fc;  
   margin-right: 10px;  
+  text-align: center;
 }
 
 button span {
   padding: 10px;    
-}
-
-.filters {
-  display: flex;  
-}
-
-.button-filter {
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-  border: 2px solid #d9d9d9;
-  border-radius: 2rem; 
-  font-weight: bold;
-}
-
-.filter-button i {
-  color: #0065fc;
-  background-color: #deebff;
-  border-radius: 50%;
-  height: 38px;
-  width: 38px;
 }
 
 .result {  /* what ? */
@@ -228,15 +221,12 @@ button span {
 
 /******** Hébergements ********/
 
-#accommodation {
-  width: 60vw;  
+#accommodation {    
   border-radius: 20px;
   padding: 30px;
   gap: 30px ;
   background-color: #f2f2f2;
-  display: inline-grid;
-  /*grid-template-rows: minmax(100px, auto) 100px 100px 30px;
-  grid-template-columns: repeat(3, 30%);  */
+  display: inline-grid;  
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 210px 210px auto;
   grid-template-areas:
@@ -258,6 +248,10 @@ button span {
 
 #accommodation figcaption {
   padding: 6px 14px;
+}
+
+.displaymore {
+  color: black;
 }
 
 .acco-title {
@@ -369,7 +363,12 @@ button span {
 }
 
 #accommodation h3, #popular h3 {
-  font-weight: bolder;  
+  font-weight: bold;
+  font-size: 0.9rem;  
+}
+
+#accommodation h2, #popular h2, #activities h2 {
+  font-size: 1.2rem;
 }
 
 #accommodation p, #popular p {
@@ -390,7 +389,7 @@ button span {
 
 #activities {  
   display: grid;  
-  grid-template-columns: repeat (4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 250px 250px;
   gap: 40px;
   grid-template-areas: 
@@ -494,3 +493,110 @@ footer a {
   font-weight: bold;
   margin: 10px 5px;
 }
+
+/******* *******/
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  body {    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "top-search"
+      "popular"
+      "accommodation"
+      "activities"
+      "footer";
+}
+
+#popular {
+  margin: 10px;
+  width: auto;
+  height: auto;
+  gap: 15px ;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "popular-title popular-title popular-title"
+  "matin eau bleu";
+}
+
+#accommodation {
+  margin: 10px;
+  width: auto;
+  height: auto;
+  gap: 15px;
+}
+
+#activities {
+  margin: 10px;
+  width: auto;
+  height: auto;
+  gap: 15px ;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto repeat(4, 150px) ;
+  grid-template-areas: 
+  "activities-title activities-title"
+  "vieuxport pomegues"
+  "vieuxport frioul"
+  "calanques garde"
+  "calanques longchamp";
+}
+
+/******* Adaptation smartphones *******/
+@media screen and (max-width: 575.98px) {
+  body {
+    margin: 0;
+    padding: 0;    
+  } 
+  /*** A revoir ***/
+  
+  header {
+    
+  }
+
+  .menu {
+    width: 100%;
+    border-bottom: 2px solid #f2f2f2;
+    padding: 0;
+  }
+  
+  .menu li {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    width: 50%;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .menu li .activities {
+    border-bottom: transparent;
+  }
+  
+  .menu :nth-child(1) {
+    border-bottom: 2px solid #0065fc;
+  }
+  
+  .menu li:hover {
+    border-top: none;
+    border-bottom: 2px solid #0065fc;
+  }
+
+  .menu .accommodation {
+    border-top: none;
+    padding: 1rem;
+  }
+
+  
+
+  
+}
+
+
+
+
+
+
+
