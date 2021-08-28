@@ -1,12 +1,11 @@
 body {
   max-width: 1440px;
-  margin: 0 auto;
-    padding: 30px;
-    font-family: Raleway, sans-serif;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: 65% 30%;
-    grid-template-areas: 
+  margin: 0 auto;    
+  font-family: Raleway, sans-serif;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
       "header header"
       "top-search top-search"
       "accommodation popular"
@@ -15,22 +14,27 @@ body {
 }
 
 .header {
+  margin: 30px;  
   grid-area: header;
 }
 
-.top-search {
+.top-search {  
+  margin: 30px; 
   grid-area: top-search;
 }
 
-.accommodation {
+.accommodation {  
+  margin-left: 30px; 
   grid-area: accommodation;
 }
 
 .popular {
+  margin-right: 30px; 
   grid-area: popular;
 }
 
 .activities {
+  margin: 30px; 
   grid-area: activities;
 }
 
@@ -40,7 +44,9 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;   
+  flex-wrap: wrap;
+  align-items: center; 
 }
 
 header a {
@@ -109,7 +115,7 @@ ul li a:hover {
   margin-bottom: 20px;
 }
 
-.text-city, .research-button, .gps {
+.text-city, .research-button {
   height: 40px;
 }
 
@@ -120,10 +126,11 @@ ul li a:hover {
   margin-left: 20px;
  }
 
-.gps {
+i.gps {
   border-radius: 1rem 0 0 1rem;
   background-color: #f2f2f2;  
   width: 40px;
+  height: 40px;
   line-height: 40px;
   text-align: center;
 }
@@ -147,12 +154,13 @@ ul li a:hover {
   padding: 0 1rem;
 }
 
-.research-icon {
+i.research-icon {
   display: none;
 }
 
 .filter-title {
-  display:inline-block;  
+  display:inline-block; 
+  padding-right: 30px; 
 }
 
 .filter-button {
@@ -162,7 +170,7 @@ ul li a:hover {
   font-weight: bold;
   height: 38px;
   line-height: 38px;
-  margin: 0 10px 5px 0;  
+  margin: 0 10px 5px 5px;  
 }
 
 .filter-button:hover {
@@ -181,8 +189,12 @@ ul li a:hover {
   margin: -2px;
 }
 
+.filter-span {
+  padding: 18px;
+}
+
 .search-result {
-  margin: 0.8rem;
+  margin: 15px 0;
 }
 
 .fa-info {
@@ -288,12 +300,12 @@ button span {
 
 /******** Populaires ********/
 #popular {
-  width: 26vw;
+  
   border-radius: 20px;
   background-color: #f2f2f2;
   padding: 30px;
   gap: 30px ;
-  margin-left: 1vw;  
+   
   display: inline-grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 150px 150px 150px;
@@ -364,11 +376,11 @@ button span {
 
 #accommodation h3, #popular h3 {
   font-weight: bold;
-  font-size: 0.9rem;  
+  font-size: 18px;  
 }
 
 #accommodation h2, #popular h2, #activities h2 {
-  font-size: 1.2rem;
+  font-size: 1.2rem;  
 }
 
 #accommodation p, #popular p {
@@ -390,18 +402,21 @@ button span {
 #activities {  
   display: grid;  
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto 250px 250px;
+  grid-template-rows: auto 150px 50px 50px 150px;
   gap: 40px;
   grid-template-areas: 
     "activities-title activities-title activities-title activities-title"
-    "vieuxport pomegues calanques garde"    
+    "vieuxport pomegues calanques garde" 
+    "vieuxport pomegues calanques 0"   
+    "vieuxport frioul calanques longchamp"
     "vieuxport frioul calanques longchamp";
 }
 
 #activities figcaption {
-  height: 20%;
+  height: 60px;
   font-weight: bold;
-  padding: 15px;
+  padding: 0 15px;
+  line-height: 60px; 
 }
 
 #activities figure {
@@ -442,20 +457,12 @@ button span {
   grid-area: longchamp;
 }
 
-.big-photo {
+.big-photo {  /* à modifier ?*/
   height: 90%;
 }
 
-.medium-photo {
+.medium-photo {  /* à modifier ?*/
   height: 70%;
-}
-
-.small-photo1 {
-  height: 75%;
-}
-
-.small-photo2 {
-  height: 50%;
 }
 
 .activity-card {
@@ -494,11 +501,11 @@ footer a {
   margin: 10px 5px;
 }
 
-/******* *******/
+/******* Adaptation *******/
 @media screen and (min-width: 768px) and (max-width: 1366px) {
   body {    
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /*pas besoin de mettre le nbre de lignes ? */
     grid-template-areas: 
       "header"
       "top-search"
@@ -528,14 +535,42 @@ footer a {
   gap: 15px;
 }
 
-#activities {
-  margin: 10px;
+#activities {  
   width: auto;
   height: auto;
-  gap: 15px ;
+  gap: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto repeat(4, 150px) ;
+  grid-template-rows: auto repeat(4, 150px);
+  /*  */
+  .activities-title {
+    grid-area: activities-title;
+  }
+  
+  .vieuxport {
+    grid-area: vieuxport;   
+  }
+  
+  .pomegues {
+    grid-area: pomegues;  
+  }
+  
+  .frioul {
+    grid-area: frioul;
+  }
+  
+  .calanques {
+    grid-area: calanques;
+  }
+  
+  .garde {
+    grid-area: garde;
+  }
+  
+  .longchamp {
+    grid-area: longchamp;
+  }
+  /*  */
   grid-template-areas: 
   "activities-title activities-title"
   "vieuxport pomegues"
@@ -544,12 +579,35 @@ footer a {
   "calanques longchamp";
 }
 
+
+/******* Adaptation 959 *******/
+/*** le symbole € passe à la ligne dans popular 
+@media screen and (max-width: 959px) {
+  #popular h3 {
+    font-size: 0.8rem;    
+  }
+  #popular p {
+    font-size: 0.8rem;
+  }
+} */
+
+
 /******* Adaptation smartphones *******/
-@media screen and (max-width: 575.98px) {
-  body {
+@media screen and (max-width: 575.98px) { /* 767 */
+  
+  body {    
     margin: 0;
-    padding: 0;    
-  } 
+    padding: 0; 
+    display: grid;
+    grid-template-columns: 1fr;    
+    grid-template-areas: 
+      "header"
+      "top-search"
+      "popular"
+      "accommodation"
+      "activities"
+      "footer";
+  }
   /*** A revoir ***/
   
   header {
@@ -564,7 +622,7 @@ footer a {
   
   .menu li {
     border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid red;
     width: 50%;
     margin: 0;
     padding: 1rem;
@@ -583,20 +641,36 @@ footer a {
     border-top: none;
     border-bottom: 2px solid #0065fc;
   }
+  /*.menu li {
+  padding: 2rem;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  color: black;
+  }*/
 
   .menu .accommodation {
     border-top: none;
     padding: 1rem;
   }
 
+  h1 { /* ne fonctionne pas */
+    font-size: 14px;
+    color: red;
+  }
+
+  .research-text {
+    display: none;
+  }
+
+  .research-icon {
+    display: block;
+  }
   
 
-  
+  #popular h3 {
+    font-size: 10rem;    
+  }
+  #popular p {
+    font-size: 1.8rem;
+  }
 }
-
-
-
-
-
-
-
