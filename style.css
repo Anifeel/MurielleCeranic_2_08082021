@@ -45,7 +45,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;   
-  flex-wrap: wrap;
+  
   align-items: center; 
 }
 
@@ -60,7 +60,7 @@ li {
 
 .menu-button {
   display: flex;
-  align-items: center;  
+  align-items: center;   
 }
 
 .menu {
@@ -501,11 +501,11 @@ footer a {
   margin: 10px 5px;
 }
 
-/******* Adaptation *******/
+/******* Adaptation tablettes*******/
 @media screen and (min-width: 768px) and (max-width: 1366px) {
   body {    
     display: grid;
-    grid-template-columns: 1fr; /*pas besoin de mettre le nbre de lignes ? */
+    grid-template-columns: 1fr; 
     grid-template-areas: 
       "header"
       "top-search"
@@ -513,89 +513,78 @@ footer a {
       "accommodation"
       "activities"
       "footer";
+  }
+
+  #popular {
+    margin: 10px;
+    width: auto;
+    height: auto;
+    gap: 15px ;    
+  }
+
+  #accommodation {
+    margin: 10px;
+    width: auto;
+    height: auto;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 180px 180px 180px auto;
+    grid-template-areas: 
+      "titreacco titreacco"
+      "cannebiere port"
+      "mouettes mer"
+      "panier amina"
+      "afficherplus afficherplus";
+  }
+
+  #activities {  
+    margin: 10px;
+    width: auto;
+    height: auto;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(4, 150px);
+    grid-template-areas: 
+      "activities-title activities-title"
+      "vieuxport pomegues"
+      "vieuxport frioul"
+      "calanques garde"
+      "calanques longchamp";
+  }
+
+  .vieuxport, .calanques {
+    height: 300px;
+  }
+
+  .pomegues, .frioul, .garde, .longchamp {
+    height: 100px;
+  }
+
+   #activities figcaption {     
+    line-height: 34px;
+    font-size: 0.9rem;
+  }
+  
+  #activities .medium-photo, #activities .small-photo1, #activities .small-photo2 {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+    
+  footer h3{
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    font-size: 0.9rem;
+  }
 }
-
-#popular {
-  margin: 10px;
-  width: auto;
-  height: auto;
-  gap: 15px ;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: auto;
-  grid-template-areas: 
-  "popular-title popular-title popular-title"
-  "matin eau bleu";
-}
-
-#accommodation {
-  margin: 10px;
-  width: auto;
-  height: auto;
-  gap: 15px;
-}
-
-#activities {  
-  width: auto;
-  height: auto;
-  gap: 15px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto repeat(4, 150px);
-  /*  */
-  .activities-title {
-    grid-area: activities-title;
-  }
+/******* Adaptation smartphones 480 ?*******/
+@media screen and (max-device-width: 480px) { /* 767  575.98*/
   
-  .vieuxport {
-    grid-area: vieuxport;   
-  }
-  
-  .pomegues {
-    grid-area: pomegues;  
-  }
-  
-  .frioul {
-    grid-area: frioul;
-  }
-  
-  .calanques {
-    grid-area: calanques;
-  }
-  
-  .garde {
-    grid-area: garde;
-  }
-  
-  .longchamp {
-    grid-area: longchamp;
-  }
-  /*  */
-  grid-template-areas: 
-  "activities-title activities-title"
-  "vieuxport pomegues"
-  "vieuxport frioul"
-  "calanques garde"
-  "calanques longchamp";
-}
-
-
-/******* Adaptation 959 *******/
-/*** le symbole € passe à la ligne dans popular 
-@media screen and (max-width: 959px) {
-  #popular h3 {
-    font-size: 0.8rem;    
-  }
-  #popular p {
-    font-size: 0.8rem;
-  }
-} */
-
-
-/******* Adaptation smartphones *******/
-@media screen and (max-width: 575.98px) { /* 767 */
-  
-  body {    
+  body {       
     margin: 0;
     padding: 0; 
     display: grid;
@@ -608,16 +597,25 @@ footer a {
       "activities"
       "footer";
   }
-  /*** A revoir ***/
-  
+    
   header {
     
   }
 
   .menu {
-    width: 100%;
+    
+    
     border-bottom: 2px solid #f2f2f2;
     padding: 0;
+  }
+
+  .menu-button {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  nav ul {
+    
   }
   
   .menu li {
@@ -626,15 +624,19 @@ footer a {
     width: 50%;
     margin: 0;
     padding: 1rem;
-    text-align: center;
+    text-align: center;    
   }
 
   .menu li .activities {
-    border-bottom: transparent;
+    border-bottom: transparent;        
   }
   
   .menu :nth-child(1) {
-    border-bottom: 2px solid #0065fc;
+    border-bottom: 2px solid #0065fc;     
+  }
+
+  .menu :nth-child(2) {
+    border-bottom: 2px solid #f2f2f2;
   }
   
   .menu li:hover {
@@ -650,27 +652,113 @@ footer a {
 
   .menu .accommodation {
     border-top: none;
-    padding: 1rem;
+    padding: 1rem;    
   }
 
   h1 { /* ne fonctionne pas */
-    font-size: 14px;
-    color: red;
+    font-size: 16px;   
+  }
+
+  .nature {
+    font-size: 0.9rem;
+  }
+
+  .label-input {
+    margin: 0;
+  }
+
+  .text-city, .research-button {
+    height: 34px;
+  }
+
+  .text-city {
+    padding-left: 10px;
   }
 
   .research-text {
     display: none;
   }
 
-  .research-icon {
+  i.research-icon {
     display: block;
+       
+  }
+
+  .research-button {
+    border-radius: 30%;
+    width: 34px;
+  }
+
+  .filter-title {
+    display: block;
+    font-size: 1rem;
+    padding-bottom: 10px;
+  }
+
+  .filter-button {
+    height: 32px;
+    line-height: 30px;
+  }
+
+  .filter-button i {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;    
+  }
+
+  .filter-span {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .search-result {
+    font-size: 0.9rem;
   }
   
-
-  #popular h3 {
-    font-size: 10rem;    
+  #popular {
+    width: 100%;
+    padding: 10px;      
+    display: flex;
+    flex-direction: column;
   }
-  #popular p {
-    font-size: 1.8rem;
+
+  .popular-card {
+    height: 130px;
+  }
+  #popular h3, #accommodation h3 {
+    font-size: 1rem;    
+  }
+  
+   #accommodation {
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+  } 
+
+  .acco-card, .activity-card {
+    height: 150px;
+    
+  }
+
+  #activities {
+    display: flex;
+    flex-direction: column;    
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .title-links {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    width: 100%;
+    font-size: 0.9rem;    
   }
 }
+
