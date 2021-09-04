@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    margin: 30px;
+    padding: 30px;
     grid-area: header;
 }
 
@@ -120,15 +120,8 @@ ul li a:hover {
     height: 40px;
 }
 
-.label-input {
-    /*position: relative;*/
-    border-radius: 1rem 0 0 1rem;
-    background-color: #f2f2f2;
-    margin-left: 20px;
-}
-
 i.gps {
-    border-radius: 1rem 0 0 1rem;
+    border-radius: 10px 0 0 10px;
     background-color: #f2f2f2;
     width: 40px;
     height: 40px;
@@ -151,8 +144,8 @@ i.gps {
     font-weight: bold;
     cursor: pointer;
     border: none;
-    border-radius: 0 1rem 1rem 0;
-    padding: 0 1rem;
+    border-radius: 0 10px 10px 0;
+    padding: 0 10px;
 }
 
 i.research-icon {
@@ -168,10 +161,8 @@ i.research-icon {
     border: 2px solid #d9d9d9;
     background-color: white;
     border-radius: 2rem;
-    font-weight: bold;
-    height: 38px;
-    line-height: 38px;
-    margin: 0 10px 5px 5px;
+    font-weight: bold;    
+    margin: 0 10px 5px 0;
 }
 
 .filter-button:hover {
@@ -192,10 +183,6 @@ i.research-icon {
     margin: -2px;
 }
 
-.filter-span {
-    padding: 18px;
-}
-
 .search-result {
     margin: 15px 0;
 }
@@ -212,7 +199,7 @@ i.research-icon {
 }
 
 button span {
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .result {
@@ -254,16 +241,18 @@ button span {
 
 #accommodation figure {
     height: 100%;
+    padding: 5px;
+}
+
+#accommodation figcaption { 
+    padding: 6px 14px;
+    height: 90px;   /* revoir height */ 
 }
 
 #accommodation img {
     border-radius: 20px 20px 0 0;
-    height: 60%;
+    height: calc(100% - 90px); /* revoir height */
     object-fit: cover;
-}
-
-#accommodation figcaption {
-    padding: 6px 14px;
 }
 
 .displaymore {
@@ -350,6 +339,7 @@ button span {
 .popular-photo {
     display: flex;
     flex-direction: row;
+    padding: 5px;
 }
 
 .soleil {
@@ -369,8 +359,7 @@ button span {
 .popular-card {
     background-color: white;
     color: black;
-    border-radius: 20px;
-    padding: 0.3rem;
+    border-radius: 20px;    
     box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);
 }
 
@@ -412,13 +401,12 @@ button span {
 #activities {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto 150px 50px 50px 150px;
+    grid-template-rows: auto 220px 10px 220px;
     gap: 40px;
     grid-template-areas:
         "activities-title activities-title activities-title activities-title"
         "vieuxport pomegues calanques garde"
-        "vieuxport pomegues calanques 0"
-        "vieuxport frioul calanques longchamp"
+        "vieuxport pomegues calanques longchamp"
         "vieuxport frioul calanques longchamp";
 }
 
@@ -467,22 +455,23 @@ button span {
     grid-area: longchamp;
 }
 
-.big-photo {
-    /* à modifier ?*/
-    height: 90%;
-}
-
-.medium-photo {
-    /* à modifier ?*/
-    height: 70%;
-}
-
 .activity-card {
+    height: 100%;
     background-color: white;
     color: black;
     font-weight: bold;
     border-radius: 20px;
     box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);
+}
+
+#activities figcaption {
+    line-height: 60px;
+    font-size: 0.9rem;
+    height: 60px;
+}
+
+.activity-card img {
+    height: calc(100% - 60px);
 }
 
 /******* footer *******/
@@ -541,7 +530,7 @@ footer a {
         gap: 15px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 180px 180px 180px auto;
+        grid-template-rows: auto 230px 230px 230px auto;
         grid-template-areas:
             "titreacco titreacco"
             "cannebiere port"
@@ -565,29 +554,31 @@ footer a {
             "calanques garde"
             "calanques longchamp";
     }
-
+/*
     .vieuxport,
     .calanques {
-        height: 300px;
+        height: 100%;
     }
 
     .pomegues,
     .frioul,
     .garde,
     .longchamp {
-        height: 100px;
+        height: 100%;
+    } */
+
+    .activity-card {
+        height: 100%;
     }
 
     #activities figcaption {
-        line-height: 34px;
+        line-height: 60px;
         font-size: 0.9rem;
+        height: 60px;
     }
 
-    #activities .medium-photo,
-    #activities .small-photo1,
-    #activities .small-photo2 {
-        width: 100%;
-        height: 100px;
+    .activity-card img {
+        height: calc(100% - 60px);
         object-fit: cover;
     }
 
@@ -599,13 +590,9 @@ footer a {
         font-size: 0.9rem;
     }
 }
-/******* Adaptation smartphones 480 ?*******/
+/******* Adaptation smartphones *******/
 @media screen and (max-device-width: 599px) {
-    /* 767  575.98*/
-
-    body {
-        margin: 0;
-        padding: 0;
+    body {       
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -648,6 +635,11 @@ footer a {
         padding: 1rem;
     }
 
+    .top-search {
+        margin: 10px;
+        padding: 10px;
+    }
+
     h1 {
         /* ne fonctionne pas */
         font-size: 16px;
@@ -657,12 +649,9 @@ footer a {
         font-size: 0.9rem;
     }
 
-    .label-input {
-        margin: 0;
-    }
-
     .text-city,
-    .research-button {
+    .research-button
+    {
         height: 34px;
     }
 
@@ -711,40 +700,70 @@ footer a {
 
     #popular {
         width: 100%;
-        padding: 10px;
+        margin: 0;
         display: flex;
         flex-direction: column;
+        gap: 10px;
+        border-radius: 0;
     }
 
     .popular-card {
         height: 130px;
     }
+
     #popular h3,
     #accommodation h3 {
         font-size: 1rem;
     }
 
-    #accommodation {
-        width: 100%;
+    #accommodation {        
+        margin: 10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
+        background-color: white;
+        gap: 10px   ;
+    }
+
+    #accommodation figcaption {
+        height: 70px;
+    }
+
+    #accommodation img {
+        height: calc(100% - 70px);
+    }
+
+    .displaymore {
+        padding-top: 10px;
     }
 
     .acco-card,
     .activity-card {
-        height: 150px;
+        height: 180px;
     }
 
     #activities {
         display: flex;
         flex-direction: column;
+        gap: 16px;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #activities figcaption {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    #activities img {
+        height: calc(100% - 50px);
     }
 
     footer {
         display: flex;
         flex-direction: column;
-        padding: 10px;
-        margin: 10px 0;
+        padding: 20px;
+        margin: 0;
     }
 
     .title-links {
