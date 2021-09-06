@@ -14,12 +14,12 @@ body {
 }
 
 .header {
-    padding: 30px;
+    padding: 30px 30px 0 30px;
     grid-area: header;
 }
 
 .top-search {
-    margin: 30px;
+    margin: 0 30px;
     grid-area: top-search;
 }
 
@@ -45,7 +45,6 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-
     align-items: center;
 }
 
@@ -76,7 +75,7 @@ li {
 }
 
 .menu li {
-    padding: 2rem;
+    padding: 30px;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     color: black;
@@ -86,9 +85,10 @@ li {
     border-top: 3px solid#0065FC;
 }
 
+/*
 ul li a:hover {
     color: #0065fc;
-}
+} */
 
 /*bouton s'inscrire*/
 .register {
@@ -97,22 +97,12 @@ ul li a:hover {
     font-weight: bold;
 }
 
-/***
-.top-search, .accommodation, .popular {
-  margin: 0 35px;  
-} ***/
-
-/***
-.activities {
-  margin: 35px;
-} ***/
-
 .nature {
     margin-bottom: 1rem;
 }
 
 .search-bar {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .text-city,
@@ -162,7 +152,7 @@ i.research-icon {
     background-color: white;
     border-radius: 2rem;
     font-weight: bold;    
-    margin: 0 10px 5px 0;
+    margin: 0 15px 5px 0;    
 }
 
 .filter-button:hover {
@@ -183,8 +173,12 @@ i.research-icon {
     margin: -2px;
 }
 
+.filter-span {
+    padding: 0 16px;
+}
+
 .search-result {
-    margin: 15px 0;
+    margin-top: 30px;
 }
 
 .fa-info {
@@ -201,13 +195,7 @@ i.research-icon {
 button span {
     padding: 0 10px;
 }
-
-.result {
-    /* what ? */
-    display: flex;
-    align-items: center;
-}
-
+/*
 .i-logo {
     width: 1.3rem;
     height: 1.3rem;
@@ -220,7 +208,7 @@ button span {
     justify-content: center;
     align-items: center;
     font-size: 12px;
-}
+} */
 
 /******** Hébergements ********/
 
@@ -503,6 +491,7 @@ footer a {
 }
 
 /******* Adaptation tablettes*******/
+
 @media screen and (min-width: 600px) and (max-width: 1366px) {
     body {
         display: grid;
@@ -554,18 +543,6 @@ footer a {
             "calanques garde"
             "calanques longchamp";
     }
-/*
-    .vieuxport,
-    .calanques {
-        height: 100%;
-    }
-
-    .pomegues,
-    .frioul,
-    .garde,
-    .longchamp {
-        height: 100%;
-    } */
 
     .activity-card {
         height: 100%;
@@ -591,8 +568,9 @@ footer a {
     }
 }
 /******* Adaptation smartphones *******/
+
 @media screen and (max-device-width: 599px) {
-    body {       
+    body {        
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -604,17 +582,38 @@ footer a {
             "footer";
     }
 
-    .menu-button {
+    header {
         display: flex;
-        flex-direction: row-reverse;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        min-width: 90px;        
+    }
+
+    .register {
+        position: absolute;
+        top: 44px;
+        
+    }
+
+    .menu-button {
+        display: flex;               
+        flex-wrap: wrap-reverse;
+        justify-content: flex-end;         
     }
 
     .menu li {
         border-top: 1px solid transparent;
         width: 50%;
         margin: 0;
-        padding: 1rem;
-        text-align: center;
+        padding: 30px;        
+        /* text-align: center; */
     }
 
     .menu :nth-child(1) {
