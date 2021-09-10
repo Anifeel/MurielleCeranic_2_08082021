@@ -151,8 +151,8 @@ i.research-icon {
     border: 2px solid #d9d9d9;
     background-color: white;
     border-radius: 2rem;
-    font-weight: bold;    
-    margin: 0 15px 5px 0;    
+    font-weight: bold;
+    margin: 0 15px 5px 0;
 }
 
 .filter-button:hover {
@@ -232,9 +232,9 @@ button span {
     padding: 5px;
 }
 
-#accommodation figcaption { 
+#accommodation figcaption {
     padding: 6px 14px;
-    height: 90px;   /* revoir height */ 
+    height: 90px; /* revoir height */
 }
 
 #accommodation img {
@@ -347,7 +347,7 @@ button span {
 .popular-card {
     background-color: white;
     color: black;
-    border-radius: 20px;    
+    border-radius: 20px;
     box-shadow: 2px 2px 3px rgba(202, 191, 191, 0.589);
 }
 
@@ -411,7 +411,7 @@ button span {
 
 #activities img {
     border-radius: 20px 20px 0 0;
-    height: calc (100% - 60px);
+    height: calc(100% - 60px);
     object-fit: cover;
 }
 
@@ -570,7 +570,7 @@ footer a {
 /******* Adaptation smartphones *******/
 
 @media screen and (max-device-width: 599px) {
-    body {        
+    body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -584,43 +584,51 @@ footer a {
 
     header {
         display: flex;
-        align-items: center;
+        /*align-items: center;*/
         position: relative;
-        justify-content: space-between;
-        align-items: center;
+        /*justify-content: space-between;*/        
         width: 100%;
         flex-wrap: wrap;
+        padding: 60px 0 0 0;
     }
 
     .logo {
-        min-width: 90px;        
+        min-width: 90px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
     }
 
     .register {
         position: absolute;
-        top: 44px;
-        
+        top: 20px;
+        right: 20px;
     }
 
+    nav {
+        padding: 20px 0 0 0;
+    }
+    
     .menu-button {
-        display: flex;               
-        flex-wrap: wrap-reverse;
-        justify-content: flex-end;         
+        display: block;
+        width: 100%;
+        /*flex-wrap: wrap-reverse;
+        justify-content: flex-end;*/
+        /*width: 100%; */
     }
 
     .menu li {
-        border-top: 1px solid transparent;
+        /*border-top: 1px solid transparent;*/
         width: 50%;
         margin: 0;
-        padding: 30px;        
-        /* text-align: center; */
+        text-align: center;
     }
 
-    .menu :nth-child(1) {
+    .menu li:nth-child(1) {        
         border-bottom: 2px solid #0065fc;
     }
 
-    .menu :nth-child(2) {
+    .menu li:nth-child(2) {
         border-bottom: 2px solid #f2f2f2;
     }
 
@@ -629,10 +637,10 @@ footer a {
         border-bottom: 2px solid #0065fc;
     }
 
-    .menu .accommodation {
-        border-top: none;
-        padding: 1rem;
-    }
+    /*.menu .accommodation { 
+        border-top: none; */
+    /*padding: 10px;
+    } */
 
     .top-search {
         margin: 10px;
@@ -649,13 +657,19 @@ footer a {
     }
 
     .text-city,
-    .research-button
-    {
+    .research-button {
         height: 34px;
     }
 
     .text-city {
         padding-left: 10px;
+        width: calc(100% - 58px);
+    }
+
+    i.gps {
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
     }
 
     .research-text {
@@ -667,8 +681,9 @@ footer a {
     }
 
     .research-button {
-        border-radius: 30%;
+        border-radius: 10px;
         width: 34px;
+        margin-left: -10px;
     }
 
     .filter-title {
@@ -678,8 +693,7 @@ footer a {
     }
 
     .filter-button {
-        height: 32px;
-        line-height: 30px;
+        height: 30px;        
     }
 
     .filter-button i {
@@ -688,13 +702,16 @@ footer a {
         line-height: 30px;
     }
 
-    .filter-span {
-        padding: 12px;
+    .filter-span {        
         font-size: 0.9rem;
     }
 
     .search-result {
         font-size: 0.9rem;
+    }
+
+    .fa-info {
+        font-size: 12px;
     }
 
     #popular {
@@ -715,13 +732,13 @@ footer a {
         font-size: 1rem;
     }
 
-    #accommodation {        
+    #accommodation {
         margin: 10px;
         padding: 10px;
         display: flex;
         flex-direction: column;
         background-color: white;
-        gap: 10px   ;
+        gap: 10px;
     }
 
     #accommodation figcaption {
@@ -739,6 +756,12 @@ footer a {
     .acco-card,
     .activity-card {
         height: 180px;
+    }
+
+    .popular-card,
+    .acco-card,
+    .activity-card {
+        box-shadow: 0 5px 10px rgba(202, 191, 191, 0.589);
     }
 
     #activities {
