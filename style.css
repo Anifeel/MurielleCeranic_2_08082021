@@ -85,11 +85,6 @@ li {
     border-top: 3px solid#0065FC;
 }
 
-/*
-ul li a:hover {
-    color: #0065fc;
-} */
-
 /*bouton s'inscrire*/
 .register {
     text-decoration: none;
@@ -234,12 +229,12 @@ button span {
 
 #accommodation figcaption {
     padding: 6px 14px;
-    height: 90px; /* revoir height */
+    height: 90px; 
 }
 
 #accommodation img {
     border-radius: 20px 20px 0 0;
-    height: calc(100% - 90px); /* revoir height */
+    height: calc(100% - 90px); 
     object-fit: cover;
 }
 
@@ -583,10 +578,8 @@ footer a {
     }
 
     header {
-        display: flex;
-        /*align-items: center;*/
-        position: relative;
-        /*justify-content: space-between;*/        
+        display: flex;        
+        position: relative;                
         width: 100%;
         flex-wrap: wrap;
         padding: 60px 0 0 0;
@@ -594,6 +587,7 @@ footer a {
 
     .logo {
         min-width: 90px;
+        max-width: 100px;
         position: absolute;
         top: 10px;
         left: 20px;
@@ -611,14 +605,10 @@ footer a {
     
     .menu-button {
         display: block;
-        width: 100%;
-        /*flex-wrap: wrap-reverse;
-        justify-content: flex-end;*/
-        /*width: 100%; */
+        width: 100%;        
     }
 
-    .menu li {
-        /*border-top: 1px solid transparent;*/
+    .menu li {        
         width: 50%;
         margin: 0;
         text-align: center;
@@ -636,24 +626,22 @@ footer a {
         border-top: none;
         border-bottom: 2px solid #0065fc;
     }
-
-    /*.menu .accommodation { 
-        border-top: none; */
-    /*padding: 10px;
-    } */
-
+    
     .top-search {
         margin: 10px;
         padding: 10px;
     }
 
-    h1 {
-        /* ne fonctionne pas */
-        font-size: 16px;
+    h1 {        
+        font-size: 22px;        
     }
 
     .nature {
         font-size: 0.9rem;
+    }
+
+    .search-bar {
+        display: flex;
     }
 
     .text-city,
