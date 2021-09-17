@@ -180,6 +180,7 @@ i.research-icon {
     width: 20px;
     height: 20px;
     line-height: 20px;
+    font-size: 12px;
     border: 1px solid #d9d9d9;
     border-radius: 50%;
     color: #0065fc;
@@ -564,7 +565,7 @@ footer a {
 }
 /******* Adaptation smartphones *******/
 
-@media screen and (max-device-width: 599px) {
+@media screen and (max-width: 599px) {
     body {
         display: grid;
         grid-template-columns: 1fr;
@@ -577,14 +578,14 @@ footer a {
             "footer";
     }
 
-    header {
+    .header {
         display: flex;        
         position: relative;                
         width: 100%;
         flex-wrap: wrap;
-        padding: 60px 0 0 0;
+        padding: 30px 0 0 0;        
     }
-
+    
     .logo {
         min-width: 90px;
         max-width: 100px;
@@ -611,6 +612,7 @@ footer a {
     .menu li {        
         width: 50%;
         margin: 0;
+        padding-bottom: 12px;
         text-align: center;
     }
 
@@ -696,10 +698,6 @@ footer a {
 
     .search-result {
         font-size: 0.9rem;
-    }
-
-    .fa-info {
-        font-size: 12px;
     }
 
     #popular {
