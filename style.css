@@ -185,7 +185,7 @@ i.research-icon {
     border-radius: 50%;
     color: #0065fc;
     margin-right: 10px;
-    text-align: center;
+    text-align: center;    
 }
 
 button span {
@@ -694,6 +694,12 @@ footer a {
 
     .filter-span {        
         font-size: 0.9rem;
+    }
+
+    .fa-info {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
     }
 
     .search-result {
