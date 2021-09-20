@@ -179,7 +179,7 @@ i.research-icon {
 .fa-info {
     width: 20px;
     height: 20px;
-    line-height: 20px;
+    line-height: 20px !important;
     font-size: 12px;
     border: 1px solid #d9d9d9;
     border-radius: 50%;
@@ -699,7 +699,7 @@ footer a {
     .fa-info {
         width: 18px;
         height: 18px;
-        line-height: 18px;
+        line-height: 18px !important;
     }
 
     .search-result {
